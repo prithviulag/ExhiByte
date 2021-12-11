@@ -79,8 +79,12 @@
     }
 }
 
-p, body {
+body {
     margin: 0;
+}
+
+a {
+    color: white;
 }
 
 h1 {
@@ -140,7 +144,7 @@ body {
     display: block;
 }
 
-.menu-Link:hover {
+a:hover {
     cursor: pointer;
     color:rgb(134, 122, 122);
 }
@@ -155,6 +159,7 @@ body {
 
 #main-Content {
     background-color:rgb(11, 19, 13);
+    background-color: rgb(11, 19, 19);
     border: 2px solid rgb(210, 255, 215);
     background-size: 10vh;
     background-position: center;
