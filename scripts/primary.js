@@ -2,10 +2,11 @@ menuTree = {
     "ExhiByte": {
         "The Project": {
             "About": {
-                "Test": {}
+                "Origins": {"src": "origins.html"},
+                "The Name": {"src": "name.html"}
             },
-            "Important Links": {},
-            "Timeline": {}
+            "Important Links": {"src": "links.html"},
+            "Timeline": {"src": "timeline.html"}
         }
     }
 }
@@ -25,13 +26,13 @@ function genMenu(idArray) {
         }
     }
 
-    if (Object.keys(level).length == 0) {
-
+    if (Object.keys(level)[0] == "src") {
+        let lnk = level[Object.keys(level)[0]];
+        window.open(lnk, "_self");
     } else {
         if (idArray.length == 1) {
             document.getElementById("home-button").style.display = "none";
         } else {
-            console.log(idArray.length);
             document.getElementById("home-button").style.display = "block";
         }
 
@@ -40,7 +41,20 @@ function genMenu(idArray) {
         }
 
         let newTitle = document.createElement("h1");
-        newTitle.textContent = idArray[idArray.length - 1];
+        newTitle.classList.add("folder-Path");
+        newTitle.textContent = "";
+        for (var dirI=0;dirI<idArray.length;dirI++) {
+            if (dirI != idArray.length - 1) {
+                newTitle.textContent += idArray[dirI];
+                newTitle.textContent += "/";
+            } else {
+                let selected = document.createElement("span");
+                selected.textContent = idArray[dirI];
+                selected.classList.add("current-Folder");
+                newTitle.appendChild(selected);
+            }
+        }
+        
         menuContent.appendChild(newTitle);
 
         let ind = 1;
