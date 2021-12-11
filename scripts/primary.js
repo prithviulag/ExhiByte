@@ -1,5 +1,6 @@
 menuTree = {
     "ExhiGlobe": {
+        "Home": {"src": "index.html"},
         "The Project": {
             "About": {
                 "Origins": {"src": "origins.html"},
@@ -27,8 +28,8 @@ function genMenu(idArray) {
     }
 
     if (Object.keys(level)[0] == "src") {
-        let lnk = level[Object.keys(level)[0]];
-        window.open(lnk, "_self");
+        /*let lnk = level[Object.keys(level)[0]];
+        window.open(lnk, "_self");*/
     } else {
         if (idArray.length == 1) {
             document.getElementById("home-button").style.display = "none";
@@ -57,26 +58,32 @@ function genMenu(idArray) {
         
         menuContent.appendChild(newTitle);
 
+        let lastArrayStr = "";
+        for (var i=0; i<idArray.length-1; i++) {
+            lastArrayStr += "'" + idArray[i] + "', ";
+        };
+        let mouseDwnBack = "genMenu([" + lastArrayStr + "])";
+        document.getElementById("home-button").setAttribute("onmousedown", mouseDwnBack);
+
         let ind = 1;
         for (var obj in Object.keys(level)) {
             let newA = document.createElement("a");
             newA.textContent = Object.keys(level)[obj];
             newA.id = "l" + String(ind);
             newA.classList.add("menu-Link");
-            let newArrayStr = "";
-            let lastArrayStr = "";
-            for (var i=0; i<idArray.length; i++) {
-                newArrayStr += "'" + idArray[i] + "', ";
-                if (i != idArray.length - 1) {
-                    lastArrayStr += "'" + idArray[i] + "', ";
-                }
-            };
-            let mouseDwnBack = "genMenu([" + lastArrayStr + "])";
 
-            newArrayStr += "'" + Object.keys(level)[obj] + "'";
-            let mouseDwn = "genMenu([" + newArrayStr + "])";
-            newA.setAttribute("onmousedown", mouseDwn);
-            document.getElementById("home-button").setAttribute("onmousedown", mouseDwnBack);
+            if (Object.keys(level[Object.keys(level)[obj]])[0] == "src") { //for links
+                newA.href = level[Object.keys(level)[obj]]["src"];
+            } else {
+                newA.textContent += "/";
+                let newArrayStr = "";
+                for (var i=0; i<idArray.length; i++) {
+                    newArrayStr += "'" + idArray[i] + "', ";
+                };
+                newArrayStr += "'" + Object.keys(level)[obj] + "'";
+                let mouseDwn = "genMenu([" + newArrayStr + "])";
+                newA.setAttribute("onmousedown", mouseDwn);
+            }
             menuContent.appendChild(newA);
 
             ind++;
@@ -146,3 +153,27 @@ function unlight(obj) {
     obj.style.border = "2px solid rgb(210, 255, 215)";
     obj.style.cursor = "default";
 }
+
+/*
+let newA = document.createElement("a");
+            newA.textContent = Object.keys(level)[obj];
+            newA.id = "l" + String(ind);
+            newA.classList.add("menu-Link");
+            let newArrayStr = "";
+            let lastArrayStr = "";
+            for (var i=0; i<idArray.length; i++) {
+                newArrayStr += "'" + idArray[i] + "', ";
+                if (i != idArray.length - 1) {
+                    lastArrayStr += "'" + idArray[i] + "', ";
+                }
+            };
+            let mouseDwnBack = "genMenu([" + lastArrayStr + "])";
+
+            newArrayStr += "'" + Object.keys(level)[obj] + "'";
+            let mouseDwn = "genMenu([" + newArrayStr + "])";
+            newA.setAttribute("onmousedown", mouseDwn);
+            document.getElementById("home-button").setAttribute("onmousedown", mouseDwnBack);
+            menuContent.appendChild(newA);
+
+            ind++;
+            */
