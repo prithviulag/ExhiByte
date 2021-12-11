@@ -26,9 +26,39 @@
     }
 }
 
+@media (max-height: 250px) {
+    @keyframes menuOpen {
+        from {
+            height: 10vw;
+            width: 10vw;
+        }
+    
+        to {
+            padding-bottom: 5%;
+            padding-left: 5%;
+            height: max-content;
+            width: 80%;
+        }
+    }
+    
+    @keyframes menuClose {
+        from {
+            padding-bottom: 5%;
+            padding-left: 5%;
+            height: max-content;
+            width: 80%;
+        }
+    
+        to {
+            height: 10vw;
+            width: 10vw;
+        }
+    }
+}
+
 @keyframes contentClose {
     from {
-        height: calc(100vh - 11vw);
+        height: max-content;
         width: calc(100% - 11.5vw);
         margin-left: calc(2px + 10vw);
         margin-top: -2px;
@@ -51,7 +81,7 @@
     }
 
     to {
-        height: calc(100vh - 11vw);
+        height: max-content;
         width: calc(100% - 11.5vw);
         margin-left: calc(2px + 10vw);
         margin-top: -2px;
@@ -164,7 +194,8 @@ a:hover {
     background-size: 10vh;
     background-position: center;
     
-    height: calc(100vh - 11vw);
+    /*height: calc(100vh - 11vw);*/
+    height: max-content;
     width: calc(100% - 11.5vw);
     margin-left: calc(2px + 10vw);
     margin-top: -2px;
@@ -175,6 +206,7 @@ a:hover {
 }
 
 #inside-Content {
+    min-height: max-content;
     padding: 5%;
     padding-top: 2.5%;
 }
