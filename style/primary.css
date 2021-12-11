@@ -1,7 +1,7 @@
 @keyframes menuOpen {
     from {
-        height: 10vh;
-        width: 10vh;
+        height: 10vw;
+        width: 10vw;
     }
 
     to {
@@ -21,8 +21,8 @@
     }
 
     to {
-        height: 10vh;
-        width: 10vh;
+        height: 10vw;
+        width: 10vw;
     }
 }
 
@@ -65,10 +65,12 @@ body {
     top: 0;
     left: 0;
 
-    background: linear-gradient(315deg, rgb(69, 110, 42), rgb(69, 110, 42), rgb(69, 110, 42), rgb(73, 66, 66), rgb(73, 66, 66), rgb(73, 66, 66));
+    border: 2px solid rgb(210, 255, 215);
+    background-size: 10vh;
+    background-position: center;
     
-    height: 10vh;
-    width: 10vh;
+    height: 10vw;
+    width: 10vw;
     animation-duration: 0.3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
@@ -114,7 +116,7 @@ body {
 }
 
 .folder-Path {
-    color: rgb(30, 29, 34);
+    color: #79889e;
 }
 
 .current-Folder {

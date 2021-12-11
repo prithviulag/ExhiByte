@@ -1,5 +1,5 @@
 menuTree = {
-    "ExhiByte": {
+    "ExhiGlobe": {
         "The Project": {
             "About": {
                 "Origins": {"src": "origins.html"},
