@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="exhibition"/>
+        <title>the ExhiByte</title>
+        <link rel="stylesheet" type="text/css" href="style/primary.css"/>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+            @import url('https://fonts.googleapis.com/css2?family=Kulim+Park:wght@300&display=swap');
+        </style>
+    </head>
+    <body onload="genMenu(['ExhiByte'])">
+        <div id="corner-MENU">
+            <div id="menu-Content" style="opacity:0;display:none;">
+                <h1>ExhiByte</h1>
+                <a id="l1" class="menu-Link">First</a>
+                <a id="l2" class="menu-Link">Second</a>
+                <a id="l3" class="menu-Link">Third</a>
+                <a id="l4" class="menu-Link">Fourth</a>
+            </div>
+            <h1 id="home-button" style="display:none;" onmousedown="genMenu(['ExhiByte'])">&#60;<span style="font-size:0.75em;margin-left:0.25em;">back</span></h1>
+        </div>
+        <script src="scripts/primary.js"></script>
+    </body>
+</html>

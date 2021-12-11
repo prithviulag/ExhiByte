@@ -1,0 +1,113 @@
+@keyframes menuOpen {
+    from {
+        height: 10vh;
+        width: 10vh;
+    }
+
+    to {
+        padding-bottom: 5%;
+        padding-left: 5%;
+        height: 60vh;
+        width: 80%;
+    }
+}
+
+@keyframes menuClose {
+    from {
+        padding-bottom: 5%;
+        padding-left: 5%;
+        height: 60vh;
+        width: 80%;
+    }
+
+    to {
+        height: 10vh;
+        width: 10vh;
+    }
+}
+
+@keyframes menuOpenContent {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes menuCloseContent {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+p, body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+body {
+    background-color: rgb(37, 43, 53);
+    color: white;
+    font-family: 'Kulim Park', sans-serif;
+}
+
+#corner-MENU {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: rgb(79, 57, 94);
+    border: 2px solid white;
+
+    height: 10vh;
+    width: 10vh;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#menu-Content {
+    min-height: max-content;
+    max-height: 75%;
+    width: 100%;
+    text-align: left;
+
+    animation-duration:0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#home-button {
+    font-size: 2em;
+
+    animation-duration:0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    
+    text-align: left;
+    padding-bottom: 5%;
+}
+
+#home-button:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.menu-Link {
+    font-size: 1.5em;
+    display: block;
+}
+
+.menu-Link:hover {
+    cursor: pointer;
+    color: black;
+}
