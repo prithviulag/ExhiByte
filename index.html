@@ -12,7 +12,7 @@
         </style>
     </head>
     <body onload="genMenu(['ExhiGlobe'])">
-        <div id="corner-MENU" style="background-image:url('images/exhiglobeCOLORS.png')">
+        <div id="corner-MENU" style="background-image:url('images/exhiglobeCOLORS.png')" onmouseover="light(this)" onmouseout="unlight(this)">
             <div id="menu-Content" style="opacity:0;display:none;">
                 <h1>ExhiGlobe</h1>
                 <a id="l1" class="menu-Link">First</a>
@@ -21,6 +21,12 @@
                 <a id="l4" class="menu-Link">Fourth</a>
             </div>
             <h1 id="home-button" style="display:none;" onmousedown="genMenu(['ExhiGlobe'])">&#60;<span style="font-size:0.75em;margin-left:0.25em;">back</span></h1>
+        </div>
+
+        <div id="main-Content">
+            <div id="inside-Content">
+                <h1>Welcome | ExhiGlobe</h1>
+            </div>
         </div>
         <script src="scripts/primary.js"></script>
     </body>

@@ -92,24 +92,33 @@ function flashMenu() {
 
 let menuOpen = false;
 
-function menuToggle(menu, clickedOnClose) {
+function menuToggle(menu, content, clickedOnClose) {
     if (menuOpen && clickedOnClose) {
         menu.style.animationName = "menuClose";
+        content.style.animationName = "contentOpen";
         menuOpen = false;
         menu.children[0].style.animationName = "menuCloseContent";
         menu.children[0].style.display = "none";
         menu.children[1].style.animationName = "menuCloseContent";
+
+        content.children[0].style.animationName = "menuOpenContent";
+        content.children[0].style.display = "block";
     } else if (!menuOpen && !clickedOnClose) {
         menu.style.animationName = "menuOpen";
+        content.style.animationName = "contentClose";
         menuOpen = true;
         menu.children[0].style.animationName = "menuOpenContent";
         menu.children[0].style.display = "block";
         menu.children[1].style.animationName = "menuOpenContent";
+
+        content.children[0].style.animationName = "menuCloseContent";
+        content.children[0].style.display = "none";
     }
 }
 
 document.addEventListener("click", function(e) {
     let menu = document.getElementById("corner-MENU");
+    let content = document.getElementById("main-Content");
 
     let clickedOnClose = true;
     if (menu == e.target || menu.children[0] == e.target || menu.children[1] == e.target) {
@@ -123,5 +132,17 @@ document.addEventListener("click", function(e) {
             i++;
         };
     }
-    menuToggle(menu, clickedOnClose);
+    menuToggle(menu, content, clickedOnClose);
 })
+
+function light(obj) {
+    if (!menuOpen) {
+        obj.style.border = "2px solid rgb(91, 97, 126)";
+        obj.style.cursor = "pointer";
+    }
+}
+
+function unlight(obj) {
+    obj.style.border = "2px solid rgb(210, 255, 215)";
+    obj.style.cursor = "default";
+}
