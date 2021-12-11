@@ -28,7 +28,7 @@
 
 @keyframes contentClose {
     from {
-        height: calc(100vh - 10vw);
+        height: calc(100vh - 11vw);
         width: calc(100% - 11.5vw);
         margin-left: calc(2px + 10vw);
         margin-top: -2px;
@@ -51,7 +51,7 @@
     }
 
     to {
-        height: calc(100vh - 10vw);
+        height: calc(100vh - 11vw);
         width: calc(100% - 11.5vw);
         margin-left: calc(2px + 10vw);
         margin-top: -2px;
@@ -164,7 +164,7 @@ a:hover {
     background-size: 10vh;
     background-position: center;
     
-    height: calc(100vh - 10vw);
+    height: calc(100vh - 11vw);
     width: calc(100% - 11.5vw);
     margin-left: calc(2px + 10vw);
     margin-top: -2px;

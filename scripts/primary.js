@@ -142,8 +142,11 @@ document.addEventListener("click", function(e) {
     menuToggle(menu, content, clickedOnClose);
 })
 
-function light(obj) {
-    if (!menuOpen) {
+function light(obj, isMenu) {
+    if (!menuOpen && isMenu) {
+        obj.style.border = "2px solid rgb(91, 97, 126)";
+        obj.style.cursor = "pointer";
+    } else if (!isMenu && menuOpen) {
         obj.style.border = "2px solid rgb(91, 97, 126)";
         obj.style.cursor = "pointer";
     }
