@@ -128,7 +128,7 @@ document.addEventListener("click", function(e) {
     let content = document.getElementById("main-Content");
 
     let clickedOnClose = true;
-    if (menu == e.target || menu.children[0] == e.target || menu.children[1] == e.target) {
+    if (menu == e.target || menu.children[0] == e.target || menu.children[1] == e.target || e.target == document.getElementById("backTxt")) {
         clickedOnClose = false;
     } else {
         let i = 0;
